@@ -1,0 +1,185 @@
+{% extends 'hospital/homebase.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+<head>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-image: url('{% static "images/back.jpg" %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .jumbotron h5,
+    h3 {
+      text-align: center;
+    }
+
+
+    .alert {
+      margin: 0px;
+    }
+
+
+
+    .glow {
+      font-size: 50px;
+      color: white;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+      }
+
+      to {
+        text-shadow: 0 0 20px #eeeeee, 0 0 30px #fa2d2d, 0 0 40px #fa2d2d, 0 0 50px #fa2d2d, 0 0 60px #fa2d2d, 0 0 70px #fa2d2d, 0 0 80px #fa2d2d;
+      }
+    }
+   
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    animation: slide-animation 21s infinite;
+    
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+  
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Keyframes for sliding animation 
+
+@keyframes slide-animation {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}*/
+@keyframes slide-animation {
+    0% { transform: translateX(0); }
+    15% { transform: translateX(0); } 
+    33% { transform: translateX(-100%); } 
+    48% { transform: translateX(-100%); } 
+    66% { transform: translateX(-200%); } 
+    81% { transform: translateX(-200%); } 
+    100% { transform: translateX(0); } 
+}
+  </style>
+</head>
+<br>
+<br>
+<div class="slider-container">
+  <div class="slider">
+      <div class="slides">
+          <div class="slide">
+              <img src="{% static "images/slide1.jpg" %}" alt="Slide 1">
+              <div class="content">
+                <h5 class="display-3 glow">Hospital Management System</h5>
+                <br><br><br>
+                <p>
+                <h3 style="color: #000000;">Emergency ?</h3>
+              
+                <p class="lead">
+                  <a class="btn btn-danger btn-lg" href="/patientclick" role="button">Take Appointment Now!</a>
+                </p>
+                <br><br>
+              </div>
+          </div>
+          <div class="slide">
+              <img src="{% static "images/slide2.jpg" %}" alt="Slide 2">
+              <div class="content">
+                <h5 class="display-3 glow">Hospital Management System</h5>
+                <br><br><br>
+                <p>
+                <h3 style="color: #000000;">Emergency ?</h3>
+              
+                <p class="lead">
+                  <a class="btn btn-danger btn-lg" href="/patientclick" role="button">Take Appointment Now!</a>
+                </p>
+                <br><br>
+              </div>
+          </div>
+          <div class="slide">
+              <img src="{% static "images/slide3.jpg" %}" alt="Slide 3">
+              <div class="content">
+                <h5 class="display-3 glow">Hospital Management System</h5>
+                <br><br><br>
+                <p>
+                <h3 style="color: #000000;">Emergency ?</h3>
+              
+                <p class="lead">
+                  <a class="btn btn-danger btn-lg" href="/patientclick" role="button">Take Appointment Now!</a>
+                </p>
+                <br><br>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<br><br><br><br>
+<div>
+{% include "hospital/admin_doctor_patient_card.html" %}
+</div>
+<br><br><br>
+
+
+{% endblock content %}
